@@ -60,7 +60,7 @@ export function CodeReviewAgentCard() {
         summarizePullRequest({ prDiff: diffText })
       ]);
       
-      if (isClient) {
+      if (process.env.NODE_ENV === 'development' && isClient) {
         console.log('Received smells result:', smellsResult);
         console.log('Received summary result:', summaryResult);
       }
